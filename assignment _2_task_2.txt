@@ -1,0 +1,20 @@
+Q2,a
+The following commands were used to solve q2,a:
+sudo apt install mysql-server-5.7
+sudo apt install zip
+curl https://downloads.mysql.com/docs/world_x-db.zip -o world_x-db.zip
+unzip world_x-db.zip
+cd world_x-db
+mysql -u root -p < world_x-db.sql
+
+USE world_x;
+SHOW TABLES;
+
+
+
+
+2b
+
+select c.Name Country, ct.Name Capital, cl.Percentage 'English Percentage' 
+from country c, countrylanguage cl, city ct 
+where c.Code=cl.CountryCode and cl.Language='English' and ct.ID=c.Capital and cl.Percentage > 50;

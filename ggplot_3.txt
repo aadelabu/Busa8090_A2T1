@@ -1,0 +1,16 @@
+Launch R studio
+#load the necessary library
+Library(ggplot2)
+Library(tidyverse)
+#create the data. Note: Dealth_rate = Total_dealth/Total_population*1,000,000
+Sn = c(1,2,3)
+Country = c("Poland","Germany","Australia")
+Total_dealth = c(562,5750,85)
+Dealth_rate = c(19,69,3)
+Total_population = c(37850000,83780000,25500000)
+busa8090 = tibble(sn, country, Total_dealth,Total_population, Dealth_rate)
+#use ggplot to plot the Bar chart 
+ggplot(data=busa8090, aes(x=Dealth_rate, y=country)) +
+  geom_bar(stat="identity",width=0.5, fill="steelblue") +
+  labs(x = "Death_rate", y = "Country", title = "Total confirmed deaths due to COVID-19 per 1,000,000 population,\n to April 27th 2020")
+
